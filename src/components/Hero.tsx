@@ -55,7 +55,7 @@ const Hero = () => {
 
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             Delivering world-class digital transformation, cloud solutions, and business strategy
-            to enterprises worldwide. Expert consulting backed by 10+ years of proven results.
+            to enterprises worldwide. Expert consulting with proven methodologies and dedication to excellence.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -76,22 +76,6 @@ const Hero = () => {
               <i className="fas fa-compass mr-2"></i>
               Explore Services
             </Button>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">10+</div>
-              <div className="text-primary-foreground/80 text-sm">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">50+</div>
-              <div className="text-primary-foreground/80 text-sm">Global Clients</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">24/7</div>
-              <div className="text-primary-foreground/80 text-sm">Support Available</div>
-            </div>
           </div>
         </div>
       </div>

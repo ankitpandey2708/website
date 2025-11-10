@@ -67,27 +67,6 @@ const WhyUs = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-20 bg-gradient-hero rounded-2xl p-12 shadow-card-hover">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">98%</div>
-              <div className="text-primary-foreground/80">Client Satisfaction</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">50+</div>
-              <div className="text-primary-foreground/80">Projects Delivered</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">15+</div>
-              <div className="text-primary-foreground/80">Countries Served</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-accent mb-2">100%</div>
-              <div className="text-primary-foreground/80">On-Time Delivery</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

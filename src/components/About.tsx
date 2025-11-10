@@ -16,7 +16,7 @@ const About = () => {
               Bridging <span className="text-gradient">Indian Expertise</span> with Global Business Needs
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Founded by <strong className="text-foreground">Ankit Pandey</strong>, The AKP combines over a decade of hands-on experience in IT consulting, digital transformation, and business strategy to deliver world-class solutions to enterprises worldwide.
+              Founded by <strong className="text-foreground">Ankit Pandey</strong>, The AKP brings expertise in IT consulting, digital transformation, and business strategy to deliver world-class solutions to enterprises worldwide.
             </p>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               Our mission is simple: leverage India's exceptional talent pool and cost advantages to provide premium consulting services that rival the world's leading firms, while maintaining the agility and personalized service of a proprietor-led business.
@@ -27,8 +27,8 @@ const About = () => {
                   <i className="fas fa-check text-accent"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">10+ Years of Excellence</h4>
-                  <p className="text-muted-foreground text-sm">Proven track record across industries and technologies</p>
+                  <h4 className="font-semibold text-foreground mb-1">Expert Consulting</h4>
+                  <p className="text-muted-foreground text-sm">Proven methodologies across industries and technologies</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
