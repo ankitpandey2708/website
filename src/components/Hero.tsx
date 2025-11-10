@@ -17,72 +17,49 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-primary-dark/95"></div>
-      </div>
-
-      {/* Animated Particles Effect */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-accent rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-accent-light rounded-full animate-float" style={{ animationDelay: "1s" }}></div>
-        <div className="absolute bottom-40 left-1/4 w-2 h-2 bg-accent rounded-full animate-float" style={{ animationDelay: "2s" }}></div>
-        <div className="absolute top-1/3 right-1/4 w-4 h-4 bg-accent-light rounded-full animate-float" style={{ animationDelay: "1.5s" }}></div>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-subtle">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23635BFF' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 z-10 text-center animate-slide-up">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-block mb-4 px-4 py-2 bg-accent/20 rounded-full border border-accent/40">
-            <span className="text-accent font-semibold text-sm">
-              <i className="fas fa-globe mr-2"></i>
+      <div className="container mx-auto px-4 z-10 text-center animate-slide-up py-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="inline-block mb-6 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
+            <span className="text-primary font-medium text-sm">
               Serving Global Clients from India
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary-foreground leading-tight">
-            Transform Your Business with Strategic{" "}
-            <span className="text-accent">IT & Consulting</span> Excellence
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-8 text-foreground leading-tight max-w-4xl mx-auto">
+            Transform your business with strategic{" "}
+            <span className="text-gradient">IT consulting</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Delivering world-class digital transformation, cloud solutions, and business strategy
-            to enterprises worldwide. Expert consulting with proven methodologies and dedication to excellence.
+          <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            World-class digital transformation, cloud solutions, and business strategy
+            for enterprises worldwide.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
             <Button
               onClick={scrollToContact}
               size="lg"
-              className="bg-accent hover:bg-accent-dark text-accent-foreground font-semibold shadow-gold transition-smooth text-lg px-8 py-6"
+              className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium shadow-accent transition-smooth text-base px-8 py-6 rounded-lg"
             >
-              <i className="fas fa-rocket mr-2"></i>
-              Start Your Project
+              Start your project
             </Button>
             <Button
               onClick={scrollToServices}
               size="lg"
               variant="outline"
-              className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold transition-smooth text-lg px-8 py-6"
+              className="border-2 border-border text-foreground hover:bg-secondary font-medium transition-smooth text-base px-8 py-6 rounded-lg"
             >
-              <i className="fas fa-compass mr-2"></i>
-              Explore Services
+              Explore services
             </Button>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-        <i className="fas fa-chevron-down text-primary-foreground/60 text-2xl"></i>
       </div>
     </section>
   );

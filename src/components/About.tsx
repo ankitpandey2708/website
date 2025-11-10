@@ -2,51 +2,39 @@ import founderImage from "@/assets/founder.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-32 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           <div className="animate-slide-up">
-            <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
-              <span className="text-accent font-semibold text-sm">
-                <i className="fas fa-user-tie mr-2"></i>
-                About the Founder
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Bridging <span className="text-gradient">Indian Expertise</span> with Global Business Needs
+            <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">
+              About The AKP
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Founded by <strong className="text-foreground">Ankit Pandey</strong>, The AKP brings expertise in IT consulting, digital transformation, and business strategy to deliver world-class solutions to enterprises worldwide.
+            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+              Founded by Ankit Pandey, The AKP brings expertise in IT consulting, digital transformation, and business strategy to deliver world-class solutions to enterprises worldwide.
             </p>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Our mission is simple: leverage India's exceptional talent pool and cost advantages to provide premium consulting services that rival the world's leading firms, while maintaining the agility and personalized service of a proprietor-led business.
             </p>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <i className="fas fa-check text-accent"></i>
-                </div>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Expert Consulting</h4>
-                  <p className="text-muted-foreground text-sm">Proven methodologies across industries and technologies</p>
+                  <h4 className="font-semibold text-foreground text-lg mb-2">Expert Consulting</h4>
+                  <p className="text-muted-foreground">Proven methodologies across industries and technologies</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <i className="fas fa-check text-accent"></i>
-                </div>
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Global Perspective</h4>
-                  <p className="text-muted-foreground text-sm">Serving clients across North America, Europe, and Asia</p>
+                  <h4 className="font-semibold text-foreground text-lg mb-2">Global Perspective</h4>
+                  <p className="text-muted-foreground">Serving clients across North America, Europe, and Asia</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <i className="fas fa-check text-accent"></i>
-                </div>
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">India Registered</h4>
-                  <p className="text-muted-foreground text-sm">GSTIN: 06COUPP8499C1Z2 - Fully compliant and transparent</p>
+                  <h4 className="font-semibold text-foreground text-lg mb-2">India Registered</h4>
+                  <p className="text-muted-foreground">GSTIN: 06COUPP8499C1Z2 - Fully compliant and transparent</p>
                 </div>
               </div>
             </div>
@@ -57,12 +45,9 @@ const About = () => {
               <img
                 src={founderImage}
                 alt="Ankit Pandey - Founder of The AKP"
-                className="rounded-2xl shadow-card-hover w-full max-w-md mx-auto"
+                className="rounded-lg shadow-lg w-full max-w-md mx-auto"
               />
             </div>
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-32 h-32 bg-accent/20 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </div>

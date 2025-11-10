@@ -9,30 +9,30 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 232 68% 20%;
+    --foreground: 220 14% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 232 68% 20%;
+    --card-foreground: 220 14% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 232 68% 20%;
+    --popover-foreground: 220 14% 11%;
 
-    /* Deep Navy - Primary brand color */
-    --primary: 232 68% 30%;
+    /* Stripe Purple - Primary brand color */
+    --primary: 244 59% 61%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 232 68% 40%;
-    --primary-dark: 232 68% 20%;
+    --primary-light: 244 59% 71%;
+    --primary-dark: 244 59% 51%;
 
-    /* Warm Gold - Accent color */
-    --accent: 44 100% 50%;
-    --accent-foreground: 232 68% 20%;
-    --accent-light: 44 100% 65%;
-    --accent-dark: 44 100% 40%;
+    /* Accent Blue */
+    --accent: 221 83% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 221 83% 63%;
+    --accent-dark: 221 83% 43%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 232 68% 30%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 14% 11%;
 
-    --muted: 220 13% 96%;
+    --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
     --destructive: 0 84.2% 60.2%;
@@ -40,53 +40,54 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 232 68% 30%;
+    --ring: 244 59% 61%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(232 68% 30%), hsl(232 68% 20%));
-    --gradient-accent: linear-gradient(135deg, hsl(44 100% 50%), hsl(44 100% 40%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 13% 98%));
+    /* Custom gradients - Subtle Stripe-style */
+    --gradient-hero: linear-gradient(135deg, hsl(244 59% 61%) 0%, hsl(221 83% 53%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(221 83% 53%), hsl(244 59% 61%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-subtle: linear-gradient(180deg, hsl(244 59% 97%), hsl(0 0% 100%));
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px hsla(232, 68%, 30%, 0.08);
-    --shadow-md: 0 4px 16px hsla(232, 68%, 30%, 0.12);
-    --shadow-lg: 0 8px 32px hsla(232, 68%, 30%, 0.16);
-    --shadow-gold: 0 8px 32px hsla(44, 100%, 50%, 0.25);
+    /* Shadows - Softer, more subtle */
+    --shadow-sm: 0 1px 3px hsla(220, 14%, 11%, 0.04);
+    --shadow-md: 0 4px 12px hsla(220, 14%, 11%, 0.08);
+    --shadow-lg: 0 12px 24px hsla(220, 14%, 11%, 0.12);
+    --shadow-accent: 0 8px 24px hsla(244, 59%, 61%, 0.15);
 
     /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 232 68% 8%;
+    --background: 220 14% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 232 68% 12%;
+    --card: 220 14% 11%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 232 68% 12%;
+    --popover: 220 14% 11%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 44 100% 50%;
-    --primary-foreground: 232 68% 20%;
+    --primary: 244 59% 61%;
+    --primary-foreground: 0 0% 100%;
 
-    --accent: 44 100% 50%;
-    --accent-foreground: 232 68% 20%;
+    --accent: 221 83% 53%;
+    --accent-foreground: 0 0% 100%;
 
-    --secondary: 232 50% 16%;
+    --secondary: 220 14% 16%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 232 50% 16%;
+    --muted: 220 14% 16%;
     --muted-foreground: 220 9% 65%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 232 50% 20%;
-    --input: 232 50% 20%;
-    --ring: 44 100% 50%;
+    --border: 220 14% 20%;
+    --input: 220 14% 20%;
+    --ring: 244 59% 61%;
   }
 }
 
@@ -102,8 +103,9 @@ All colors MUST be HSL.
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
   }
 }
 
@@ -133,8 +135,12 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-lg);
   }
 
-  .shadow-gold {
-    box-shadow: var(--shadow-gold);
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
   }
 
   .transition-smooth {

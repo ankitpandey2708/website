@@ -1,21 +1,17 @@
 const features = [
   {
-    icon: "fa-globe-americas",
     title: "Global Perspective",
     description: "Experience working with Fortune 500 companies and startups across continents, bringing international best practices to every project.",
   },
   {
-    icon: "fa-dollar-sign",
     title: "Cost-Effective Solutions",
     description: "Premium consulting quality at competitive rates, leveraging India's cost advantages without compromising on expertise or delivery.",
   },
   {
-    icon: "fa-certificate",
     title: "Proven Methodologies",
     description: "Industry-standard frameworks including Agile, Six Sigma, and ITIL combined with innovative approaches tailored to your needs.",
   },
   {
-    icon: "fa-headset",
     title: "24/7 Support",
     description: "Round-the-clock availability to support global clients across all time zones with responsive, personalized service.",
   },
@@ -23,41 +19,24 @@ const features = [
 
 const WhyUs = () => {
   return (
-    <section id="why-us" className="py-24 bg-secondary relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
-
+    <section id="why-us" className="py-32 bg-background">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-slide-up">
-          <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
-            <span className="text-accent font-semibold text-sm">
-              <i className="fas fa-star mr-2"></i>
-              Why Choose The AKP
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Your Success is <span className="text-gradient">Our Priority</span>
+        <div className="text-center mb-20 animate-slide-up max-w-3xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-semibold mb-6 text-foreground">
+            Why choose us
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground">
             We combine global expertise with Indian innovation to deliver exceptional value
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-background rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-smooth group cursor-pointer animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="p-8 group"
             >
-              <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-smooth shadow-gold">
-                <i className={`fas ${feature.icon} text-2xl text-accent-foreground`}></i>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-accent transition-smooth">
+              <h3 className="text-xl font-semibold mb-4 text-foreground">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -66,7 +45,6 @@ const WhyUs = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

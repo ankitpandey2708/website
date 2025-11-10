@@ -51,40 +51,30 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-
+    <section id="contact" className="py-32 bg-gradient-subtle">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 animate-slide-up">
-            <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
-              <span className="text-accent font-semibold text-sm">
-                <i className="fas fa-envelope mr-2"></i>
-                Get In Touch
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Ready to <span className="text-gradient">Transform</span> Your Business?
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 animate-slide-up max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-semibold mb-6 text-foreground">
+              Get in touch
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Let's discuss how we can help you achieve your goals. Reach out today for a free consultation.
+            <p className="text-xl text-muted-foreground">
+              Let's discuss how we can help you achieve your goals
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-card rounded-2xl p-8 shadow-card animate-fade-in">
+            <div className="bg-card rounded-lg p-10 border border-border shadow-sm animate-fade-in">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
-                    Your Name
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    Name
                   </label>
                   <Input
                     id="name"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full"
@@ -92,13 +82,13 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
-                    Email Address
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    Email
                   </label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="john@company.com"
+                    placeholder="you@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full"
@@ -106,12 +96,12 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-2">
-                    Project Details
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    Message
                   </label>
                   <Textarea
                     id="message"
-                    placeholder="Tell us about your project requirements..."
+                    placeholder="Tell us about your project..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full min-h-32"
@@ -120,70 +110,50 @@ const Contact = () => {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary-light transition-smooth font-semibold text-lg py-6"
+                  className="w-full bg-primary hover:bg-primary-dark transition-smooth font-medium text-base py-6"
                 >
-                  <i className="fas fa-paper-plane mr-2"></i>
-                  Send Message
+                  Send message
                 </Button>
               </form>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-8 animate-fade-in">
-              <div className="bg-card rounded-2xl p-8 shadow-card">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-envelope text-accent text-xl"></i>
-                  </div>
+              <div>
+                <h3 className="text-sm font-medium text-muted-foreground mb-6">Contact information</h3>
+                <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Email</h4>
+                    <h4 className="font-medium text-foreground mb-1">Email</h4>
                     <a
                       href="mailto:ankitpandey2708@gmail.com"
-                      className="text-accent hover:text-accent-dark transition-smooth"
+                      className="text-primary hover:text-primary-dark transition-smooth"
                     >
                       ankitpandey2708@gmail.com
                     </a>
                   </div>
-                </div>
-              </div>
 
-              <div className="bg-card rounded-2xl p-8 shadow-card">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-globe text-accent text-xl"></i>
-                  </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Website</h4>
+                    <h4 className="font-medium text-foreground mb-1">Website</h4>
                     <a
                       href="https://ankitpandey2708.in"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent hover:text-accent-dark transition-smooth"
+                      className="text-primary hover:text-primary-dark transition-smooth"
                     >
                       ankitpandey2708.in
                     </a>
                   </div>
-                </div>
-              </div>
 
-              <div className="bg-card rounded-2xl p-8 shadow-card">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-map-marker-alt text-accent text-xl"></i>
-                  </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-2">Location</h4>
+                    <h4 className="font-medium text-foreground mb-1">Location</h4>
                     <p className="text-muted-foreground">India</p>
-                    <p className="text-xs text-muted-foreground mt-1">Serving clients globally</p>
+                    <p className="text-sm text-muted-foreground mt-1">Serving clients globally</p>
                   </div>
-                </div>
-              </div>
 
-              <div className="bg-gradient-hero rounded-2xl p-8 shadow-card-hover">
-                <div className="text-center">
-                  <i className="fas fa-certificate text-accent text-3xl mb-3"></i>
-                  <h4 className="font-semibold text-primary-foreground mb-2">India Registered</h4>
-                  <p className="text-primary-foreground/80 text-sm">GSTIN: 06COUPP8499C1Z2</p>
+                  <div className="pt-6 border-t border-border">
+                    <h4 className="font-medium text-foreground mb-1">Registration</h4>
+                    <p className="text-sm text-muted-foreground">GSTIN: 06COUPP8499C1Z2</p>
+                  </div>
                 </div>
               </div>
             </div>
