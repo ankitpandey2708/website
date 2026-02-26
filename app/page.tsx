@@ -357,12 +357,12 @@ function ProfileView({ profile, updatedAt }: { profile: Profile; updatedAt: stri
           rel="noopener noreferrer"
           className="claude-link"
         >
-          <span style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
+          <span className="nav-label" style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
             fetched via
           </span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/claude.svg" alt="Claude" style={{ width: "13px", height: "13px" }} />
-          <span style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
+          <span className="nav-label" style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
             memory · {formatDate(updatedAt)}
           </span>
         </a>

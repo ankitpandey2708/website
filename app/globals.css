@@ -175,6 +175,9 @@ body::after {
   .bento-grid {
     grid-template-columns: 1fr !important;
   }
+  .nav-label {
+    display: none;
+  }
 }
 
 /* ── Component hover styles ── */
