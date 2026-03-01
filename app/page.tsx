@@ -516,7 +516,7 @@ function ProfileView({ profile, updatedAt }: { profile: Profile; updatedAt: stri
             fontSize: "10px",
             fontWeight: 300,
             letterSpacing: "0.06em",
-            color: "var(--color-text-ghost)",
+            color: "var(--color-text-dim)",
             lineHeight: 1.6,
             textAlign: "center",
           }}
