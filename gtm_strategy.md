@@ -1,3 +1,10 @@
+# posiitoning
+1. about.me alternative for knowledge workers
+2. dating/natrimonial integration
+3. kya chal rha hai ?
+
+
+
 # GTM Strategy: Promoting Claude Memory Website on Reddit & HackerNews
 
 Your app has a **killer hook**: a personal website with *zero* hardcoded content — every word is pulled live from Claude AI's memory and structured by Gemini. This is novel, technically interesting, and hits the sweet spot for both communities.
