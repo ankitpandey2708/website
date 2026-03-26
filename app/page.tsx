@@ -287,6 +287,89 @@ const IconGitHub = () => (
    PROFILE VIEW
    ═══════════════════════════════════════════════ */
 
+function SiteNav({ updatedAt }: { updatedAt?: string }) {
+  return (
+    <nav
+      className="fade-in"
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
+        height: "50px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0 clamp(20px, 4vw, 40px)",
+        borderBottom: "1px solid var(--color-rule)",
+        backdropFilter: "blur(20px) saturate(1.4)",
+        background: "rgba(17, 15, 13, 0.75)",
+        animationDelay: "0.3s",
+      }}
+    >
+      <a
+        href="https://claude.ai/settings/capabilities"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="claude-link"
+      >
+        <span className="nav-label" style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
+          fetched via
+        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/claude.svg" alt="Claude" style={{ width: "13px", height: "13px" }} />
+        {updatedAt && (
+          <span className="nav-label" style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
+            memory · {formatDate(updatedAt)}
+          </span>
+        )}
+      </a>
+
+      <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+        {([
+          { title: "Resume", href: "https://resume.ankitpandey2708.in/", icon: <IconResume /> },
+          { title: "LinkedIn", href: "https://www.linkedin.com/in/ankitpandey2708", icon: <IconLinkedIn /> },
+          { title: "Book a Meeting", href: "https://meet.ankitpandey2708.in/", icon: <IconMeet /> },
+          { title: "GitHub", href: "https://github.com/ankitpandey2708", icon: <IconGitHub /> },
+        ] as const).map((link) => (
+          <NavLink key={link.title} href={link.href} title={link.title}>{link.icon}</NavLink>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer
+      className="fade-in"
+      style={{
+        position: "relative",
+        zIndex: 1,
+        borderTop: "1px solid var(--color-rule)",
+        padding: "20px clamp(20px, 4vw, 40px)",
+        animationDelay: "1.6s",
+      }}
+    >
+      <p
+        style={{
+          fontFamily: "var(--font-mono)",
+          fontSize: "10px",
+          fontWeight: 300,
+          letterSpacing: "0.06em",
+          color: "var(--color-text-dim)",
+          lineHeight: 1.6,
+          textAlign: "center",
+        }}
+      >
+        Every word on this page comes directly from what{" "}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/claude.svg" alt="Claude" style={{ width: "11px", height: "11px", verticalAlign: "middle", display: "inline" }} />
+        {" "}has learned and remembered about me. No hardcoded bio, no CMS, no manual editing.
+      </p>
+    </footer>
+  );
+}
+
 function ProfileView({ profile, updatedAt }: { profile: Profile; updatedAt: string }) {
   const [firstName = "", ...rest] = profile.name.split(" ");
   const restName = rest.join(" ");
@@ -333,51 +416,7 @@ function ProfileView({ profile, updatedAt }: { profile: Profile; updatedAt: stri
         />
       </div>
 
-      {/* ── Top bar ── */}
-      <nav
-        className="fade-in"
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          height: "50px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 clamp(20px, 4vw, 40px)",
-          borderBottom: "1px solid var(--color-rule)",
-          backdropFilter: "blur(20px) saturate(1.4)",
-          background: "rgba(17, 15, 13, 0.75)",
-          animationDelay: "0.3s",
-        }}
-      >
-        <a
-          href="https://claude.ai/settings/capabilities"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="claude-link"
-        >
-          <span className="nav-label" style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
-            fetched via
-          </span>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/claude.svg" alt="Claude" style={{ width: "13px", height: "13px" }} />
-          <span className="nav-label" style={{ ...monoLabel, fontSize: "9px", fontWeight: 400, letterSpacing: "0.1em", color: "var(--color-text-dim)" }}>
-            memory · {formatDate(updatedAt)}
-          </span>
-        </a>
-
-        <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-          {([
-            { title: "Resume", href: "https://resume.ankitpandey2708.in/", icon: <IconResume /> },
-            { title: "LinkedIn", href: "https://www.linkedin.com/in/ankitpandey2708", icon: <IconLinkedIn /> },
-            { title: "Book a Meeting", href: "https://meet.ankitpandey2708.in/", icon: <IconMeet /> },
-            { title: "GitHub", href: "https://github.com/ankitpandey2708", icon: <IconGitHub /> },
-          ] as const).map((link) => (
-            <NavLink key={link.title} href={link.href} title={link.title}>{link.icon}</NavLink>
-          ))}
-        </div>
-      </nav>
+      <SiteNav updatedAt={updatedAt} />
 
       {/* ── Content ── */}
       <div
@@ -499,34 +538,7 @@ function ProfileView({ profile, updatedAt }: { profile: Profile; updatedAt: stri
         </div>
       </div>
 
-      {/* ── Footer ── */}
-      <footer
-        className="fade-in"
-        style={{
-          position: "relative",
-          zIndex: 1,
-          borderTop: "1px solid var(--color-rule)",
-          padding: "20px clamp(20px, 4vw, 40px)",
-          animationDelay: "1.6s",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: "10px",
-            fontWeight: 300,
-            letterSpacing: "0.06em",
-            color: "var(--color-text-dim)",
-            lineHeight: 1.6,
-            textAlign: "center",
-          }}
-        >
-          Every word on this page comes directly from what{" "}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/claude.svg" alt="Claude" style={{ width: "11px", height: "11px", verticalAlign: "middle", display: "inline" }} />
-          {" "}has learned and remembered about me. No hardcoded bio, no CMS, no manual editing.
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
@@ -559,15 +571,18 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Check sessionStorage first — skip loader entirely on repeat visits
+    // Check localStorage — skip loader if cache is less than 2 days old
     try {
       const cached = localStorage.getItem(SESSION_CACHE_KEY);
       if (cached) {
-        const parsed: ProfileResponse = JSON.parse(cached);
-        setData(parsed);
-        setProgress(100);
-        setLoaderDone(true);
-        return;
+        const { data: parsed, cachedAt }: { data: ProfileResponse; cachedAt: number } = JSON.parse(cached);
+        const TWO_DAYS = 2 * 24 * 60 * 60 * 1000;
+        if (Date.now() - cachedAt < TWO_DAYS) {
+          setData(parsed);
+          setProgress(100);
+          setLoaderDone(true);
+          return;
+        }
       }
     } catch {
       // ignore parse errors, fall through to fetch
@@ -593,7 +608,7 @@ export default function Home() {
           setError(d.error);
         } else {
           setData(d);
-          try { localStorage.setItem(SESSION_CACHE_KEY, JSON.stringify(d)); } catch { /* quota */ }
+          try { localStorage.setItem(SESSION_CACHE_KEY, JSON.stringify({ data: d, cachedAt: Date.now() })); } catch { /* quota */ }
         }
         finish();
       })
@@ -611,22 +626,26 @@ export default function Home() {
       {!loaderDone && <Loader progress={progress} done={progress === 100} />}
 
       {error ? (
-        <div style={{ maxWidth: "1060px", margin: "0 auto", padding: "80px clamp(20px, 4vw, 40px)" }}>
-          <div
-            style={{
-              ...monoLabel,
-              fontSize: "12px",
-              fontWeight: 400,
-              color: "var(--color-gold)",
-              padding: "28px 32px",
-              borderRadius: "12px",
-              border: "1px solid var(--color-gold-soft)",
-              background: "var(--color-gold-soft)",
-              lineHeight: 1.6,
-            }}
-          >
-            {error}
+        <div style={{ position: "relative", minHeight: "100vh" }}>
+          <SiteNav />
+          <div style={{ maxWidth: "1060px", margin: "0 auto", padding: "80px clamp(20px, 4vw, 40px)" }}>
+            <div
+              style={{
+                ...monoLabel,
+                fontSize: "12px",
+                fontWeight: 400,
+                color: "var(--color-gold)",
+                padding: "28px 32px",
+                borderRadius: "12px",
+                border: "1px solid var(--color-gold-soft)",
+                background: "var(--color-gold-soft)",
+                lineHeight: 1.6,
+              }}
+            >
+              {error}
+            </div>
           </div>
+          <SiteFooter />
         </div>
       ) : data ? (
         <ProfileView profile={data.profile} updatedAt={data.updatedAt} />
