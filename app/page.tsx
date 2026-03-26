@@ -627,25 +627,51 @@ export default function Home() {
 
       {error ? (
         <div style={{ position: "relative", minHeight: "100vh" }}>
-          <SiteNav />
-          <div style={{ maxWidth: "1060px", margin: "0 auto", padding: "80px clamp(20px, 4vw, 40px)" }}>
-            <div
-              style={{
-                ...monoLabel,
-                fontSize: "12px",
-                fontWeight: 400,
-                color: "var(--color-gold)",
-                padding: "28px 32px",
-                borderRadius: "12px",
-                border: "1px solid var(--color-gold-soft)",
-                background: "var(--color-gold-soft)",
-                lineHeight: 1.6,
-              }}
-            >
-              {error}
+          <div style={{ maxWidth: "640px", margin: "0 auto", padding: "clamp(60px, 10vh, 100px) clamp(20px, 4vw, 40px)" }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 300, fontStyle: "italic", color: "var(--color-text)", lineHeight: 1.2, marginBottom: "48px" }}>
+              {"Claude's memory seems quiet."}<br />{"Here's where to find me:"}
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
+              {([
+                { title: "Resume", href: "https://resume.ankitpandey2708.in/", icon: <IconResume />, desc: "Work history & skills" },
+                { title: "LinkedIn", href: "https://www.linkedin.com/in/ankitpandey2708", icon: <IconLinkedIn />, desc: "Connect professionally" },
+                { title: "Book a Meeting", href: "https://meet.ankitpandey2708.in/", icon: <IconMeet />, desc: "Schedule time with me" },
+                { title: "GitHub", href: "https://github.com/ankitpandey2708", icon: <IconGitHub />, desc: "Projects & open source" },
+              ] as const).map((link) => (
+                <a
+                  key={link.title}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "14px",
+                    padding: "18px 20px",
+                    borderRadius: "12px",
+                    border: "1px solid var(--color-card-border)",
+                    background: "var(--color-card)",
+                    textDecoration: "none",
+                    transition: "border-color 0.2s, background 0.2s",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(212, 148, 58, 0.3)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "var(--color-gold-soft)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--color-card-border)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "var(--color-card)";
+                  }}
+                >
+                  <span style={{ color: "var(--color-gold)", flexShrink: 0 }}>{link.icon}</span>
+                  <span>
+                    <span style={{ ...monoLabel, display: "block", fontSize: "10px", color: "var(--color-text)", marginBottom: "3px" }}>{link.title}</span>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--color-text-dim)" }}>{link.desc}</span>
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
-          <SiteFooter />
         </div>
       ) : data ? (
         <ProfileView profile={data.profile} updatedAt={data.updatedAt} />
